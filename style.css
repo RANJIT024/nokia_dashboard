@@ -66,25 +66,32 @@ body {
 /* ID Input & Controls Row */
 .id-controls-row {
     display: flex;
-    justify-content: space-between; /* Pushes ID inputs and controls apart */
+    justify-content: space-between;
     align-items: center;
-    padding: 15px 20px;
+    padding: 8px 12px;     /* Reduced padding */
     background-color: #f8f9fa;
     border-bottom: 1px solid #ccc;
-    gap: 20px; /* Add gap between the two main groups */
+    gap: 10px;             /* Smaller gap */
+    flex-wrap: nowrap;     /* Prevent breaking into 2 lines */
+    overflow-x: auto;      /* Allow scroll if content overflows */
 }
+
 
 .id-input-group {
     display: flex;
-    align-items: center;
-    gap: 20px; /* Space between individual ID input groups */
+    flex: 1 1 0;       /* Let them grow and shrink */
+    flex-wrap: wrap;   /* Wrap inner items if needed */
+    min-width: 0;      /* Prevent overflow from long content */
+    gap: 10px;
 }
 
 /* Controls Group (already exists, ensure alignment) */
 .controls-group {
     display: flex;
-    align-items: center;
-    gap: 15px;
+    flex: 1 1 0;       /* Let them grow and shrink */
+    flex-wrap: wrap;   /* Wrap inner items if needed */
+    min-width: 0;      /* Prevent overflow from long content */
+    gap: 10px;
 }
 
 /* Present Values Row */
@@ -129,7 +136,7 @@ body {
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 0.9em;
-    min-width: 150px;
+    min-width: 100px;
 }
 
 .input-group.present label {
